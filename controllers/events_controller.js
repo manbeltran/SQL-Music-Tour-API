@@ -3,7 +3,7 @@ const events = require('express').Router()
 const { Router } = require('express')
 const db = require ('../models')
 const band = require('../models/band')
-const { Event } = db
+const { Event, Meet_Greet, Band, Set_Time, Stage, Stage_Event } = db;
 
 events.get('/', async (req, res) => {
     try {
@@ -20,7 +20,7 @@ events.get('/', async (req, res) => {
 })
 
 //find specific event
-events.get('/:id', async (req, res) => {
+events.get('/:name', async (req, res) => {
     try {
         const foundEvent = await Event.findOne({
             where: { event_id: req.params.id }

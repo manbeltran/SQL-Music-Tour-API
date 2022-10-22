@@ -1,7 +1,7 @@
 const stages = require('express').Router()
 const { Router } = require('express')
 const db = require('../models')
-const { Stage } = db
+const { Stage, Model  } = db
 
 
 //find all stages
